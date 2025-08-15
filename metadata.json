@@ -1,0 +1,10 @@
+{
+  "name": "Cognos AI Agent",
+  "description": "A sleek, modern AI chat interface inspired by leading designs like ChatGPT, featuring a soft gradient background and centered, intuitive controls. The application provides a seamless transition from a welcoming prompt screen to a dynamic chat view.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ],
+  "prompt": ""
+}

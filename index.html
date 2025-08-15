@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cognos AI Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-DotAjdYpDFhACAZ3Y1ADkIvMsmMozLGbM9D3L/3A/eK/zP/iO/7mGqT2tEaBklwH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddlMizODiL3AUi96lq3NXsA+hR0vrI9TOmbL1FpMAbZASpL6L6oX" crossorigin="anonymous"></script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai",
+    "jszip": "https://esm.sh/jszip@3.10.1"
+  }
+}
+</script>
+    <style>
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.3s ease-out forwards;
+      }
+      @keyframes modal-fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes modal-content-in {
+        from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .animate-modal-fade-in {
+        animation: modal-fade-in 0.2s ease-out forwards;
+      }
+      .animate-modal-content-in {
+        animation: modal-content-in 0.3s ease-out forwards;
+      }
+      /* Custom scrollbar for webkit browsers */
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background-color: rgba(156, 163, 175, 0.4);
+        border-radius: 3px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(156, 163, 175, 0.6);
+      }
+      
+      /* THEME VARIABLES */
+      :root, .theme-aura {
+        --color-bg: 255 255 255;
+        --color-bg-alt: 247 247 248;
+        --color-input-bg: 255 255 255;
+        --color-card-bg: 255 255 255;
+        --color-card-bg-hover: 247 247 248;
+        --color-text-primary: 17 23 41;
+        --color-text-secondary: 107 114 128;
+        --color-text-accent: 99 102 241;
+        --color-border: 229 231 235;
+        --color-primary: 99 102 241; /* indigo-500 */
+        --color-primary-hover: 79 70 229; /* indigo-600 */
+        --color-primary-text: 255 255 255;
+        --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+
+       html {
+        color: rgb(var(--color-text-primary));
+        font-family: var(--font-sans);
+       }
+
+       html.theme-aura {
+         background-color: rgb(255, 255, 255);
+         background-image: 
+            radial-gradient(at 20% 20%, hsla(250, 80%, 92%, 0.3) 0px, transparent 50%),
+            radial-gradient(at 80% 20%, hsla(200, 80%, 90%, 0.3) 0px, transparent 50%),
+            radial-gradient(at 80% 80%, hsla(40, 80%, 90%, 0.3) 0px, transparent 50%),
+            radial-gradient(at 20% 80%, hsla(300, 80%, 92%, 0.3) 0px, transparent 50%);
+       }
+
+       body {
+          background-color: transparent;
+       }
+
+       .prose-sm {
+        font-size: 0.925rem;
+        line-height: 1.6;
+       }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
